@@ -36,6 +36,7 @@ plugins {
     id("com.github.gmazzo.buildconfig") version "5.5.0"
     id("com.diffplug.spotless") version "6.25.0"
     id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("co.uzzu.dotenv.gradle") version "4.0.0" apply true
 }
 
 group = "com.airthings.clickhouse"
@@ -275,7 +276,7 @@ publishing {
     }
 
     publications {
-        register("ClickHouseKafkaConnect", MavenPublication::class) {
+        register<MavenPublication>("gpr") {
             from(components["java"])
         }
     }
