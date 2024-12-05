@@ -37,7 +37,7 @@ jobs:
       - name: Publish package
         run: ./gradlew publish
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.PACKAGES_WRITE_TOKEN }}
 
       - name: release
         uses: actions/create-release@v1
